@@ -261,9 +261,20 @@ def send_movie_details(message, movie):
 
     if poster_path:
         photo_url = f"{TMDB_IMAGE_URL}{poster_path}"
-        bot.send_photo(message.chat.id, photo_url, caption=caption, parse_mode="HTML")
+        bot.send_photo(
+            message.chat.id,
+            photo_url,
+            caption=caption,
+            parse_mode="HTML",
+            disable_web_page_preview=True  # 👈 Ավելացվեց սա
+        )
     else:
-        bot.send_message(message.chat.id, caption, parse_mode="HTML")
+        bot.send_message(
+            message.chat.id,
+            caption,
+            parse_mode="HTML",
+            disable_web_page_preview=True  # 👈 Ավելացվեց սա
+        )
 
 
 if __name__ == "__main__":
