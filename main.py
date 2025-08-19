@@ -250,13 +250,13 @@ def send_movie_details(message, movie):
         videos = video_resp.get("results", [])
         trailer = next((v for v in videos if v["type"] == "Trailer" and v["site"] == "YouTube"), None)
         if trailer:
-            trailer_url = f"https://www.youtube.com/watch?v={trailer['key']}"
+            trailer_url = f"https://www.kinoon.live"
 
     caption = (
         f"🎬 <b>{title}</b> ({year})\n"
         f"⭐ Rating: {rating}/10\n\n"
         f"📝 {overview}\n\n"
-        f"▶️ <a href='{trailer_url}'>Watch trailer</a>"
+        f"▶️ <a href='{trailer_url}'>Watch on KinoON</a>"
     )
 
     if poster_path:
